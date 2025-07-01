@@ -88,10 +88,23 @@ const updateEvent = async (req, res) => {
   res.json({ message: "Event updated successfully", result });
 };
 
+// Delete Event
+const deleteEvent = async (req, res) => {
+  const events = getEventsCollection();
+  const { id } = req.params;
+
+  const result = await events.deleteOne({
+    _id: new ObjectId(id),
+    userId: req.user.userId,
+  });
+  res.json({ message: "Event deleted successfully", result });
+};
+
 module.exports = {
   addEvent,
   getAllEvents,
   joinEvent,
   getMyEvents,
   updateEvent,
+  deleteEvent,
 };
