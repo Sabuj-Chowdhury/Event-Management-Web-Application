@@ -41,15 +41,6 @@ const FeaturedEvents = () => {
                 📅 {event.date} 🕒 {event.time}
               </p>
               <p className="text-sm line-clamp-3">{event.description}</p>
-
-              <div className="card-actions justify-center mt-4">
-                <Link
-                  to={`/events/${event._id}`}
-                  className="btn btn-sm btn-primary"
-                >
-                  View Details
-                </Link>
-              </div>
             </div>
           </div>
         ))}
