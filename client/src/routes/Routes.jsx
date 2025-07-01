@@ -7,6 +7,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddEvent from "../pages/AddEvent";
 import MyEvents from "../pages/MyEvents";
+import UpdateEvent from "../pages/UpdateEvent";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/my-events",
         element: <MyEvents />,
+      },
+      {
+        path: "/update-event/:id",
+        element: <UpdateEvent />,
       },
     ],
   },
