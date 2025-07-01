@@ -31,8 +31,71 @@ const addEvent = async (req, res) => {
 // Get All Events
 const getAllEvents = async (req, res) => {
   const events = getEventsCollection();
+  const { search = "", filter = "" } = req.query;
 
-  const data = await events.find().sort({ date: -1, time: -1 }).toArray();
+  const now = new Date();
+  const formatDate = (date) => date.toISOString().split("T")[0];
+
+  let filterCondition = {};
+
+  // Title Search
+  if (search) {
+    filterCondition.title = { $regex: search, $options: "i" };
+  }
+
+  // Date Ranges
+  const getRange = (type) => {
+    const start = new Date(now);
+    const end = new Date(now);
+
+    switch (type) {
+      case "today":
+        return { $eq: formatDate(now) };
+
+      case "this_week":
+        start.setDate(now.getDate() - now.getDay());
+        end.setDate(now.getDate() + (6 - now.getDay()));
+        break;
+
+      case "last_week":
+        start.setDate(now.getDate() - 7 - now.getDay());
+        end.setDate(now.getDate() - 1 - now.getDay());
+        break;
+
+      case "this_month":
+        start.setDate(1);
+        end.setMonth(now.getMonth() + 1);
+        end.setDate(0);
+        break;
+
+      case "last_month":
+        start.setMonth(now.getMonth() - 1);
+        start.setDate(1);
+        end.setDate(0);
+        break;
+
+      default:
+        return null;
+    }
+
+    return {
+      $gte: formatDate(start),
+      $lte: formatDate(end),
+    };
+  };
+
+  if (filter) {
+    const dateCondition = getRange(filter);
+    if (dateCondition) {
+      filterCondition.date = dateCondition;
+    }
+  }
+
+  const data = await events
+    .find(filterCondition)
+    .sort({ date: -1, time: -1 })
+    .toArray();
+
   res.json(data);
 };
 
