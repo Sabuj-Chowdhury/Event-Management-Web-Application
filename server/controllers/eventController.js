@@ -60,8 +60,21 @@ const joinEvent = async (req, res) => {
   res.json({ message: "Joined successfully" });
 };
 
+// get events by user (my events)
+const getMyEvents = async (req, res) => {
+  const events = getEventsCollection();
+
+  const data = await events
+    .find({ userId: req.user.userId })
+    .sort({ date: -1, time: -1 })
+    .toArray();
+
+  res.json(data);
+};
+
 module.exports = {
   addEvent,
   getAllEvents,
   joinEvent,
+  getMyEvents,
 };
