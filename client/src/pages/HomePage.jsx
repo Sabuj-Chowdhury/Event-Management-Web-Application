@@ -1,5 +1,6 @@
 import Banner from "../components/Banner";
 import EventSearch from "../components/EventSearch";
+import FeaturedEvents from "../components/FeaturedEvents";
 
 const HomePage = () => {
   return (
@@ -7,7 +8,7 @@ const HomePage = () => {
       {/* hero/banner */}
       <Banner />
       <EventSearch />
-      {/* How It Works (Steps/Icons) */}
+      <FeaturedEvents />
       {/* Why Choose Us (Optional) */}
     </div>
   );
