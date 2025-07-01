@@ -3,7 +3,7 @@ import heroImg from "../assets/hero.jpg";
 
 const Banner = () => {
   return (
-    <div className="hero min-h-[80vh] bg-base-200 px-4 py-10">
+    <div className="hero min-h-[60vh] bg-base-200 px-4 py-5">
       <div className="hero-content flex-col lg:flex-row-reverse gap-10">
         <img
           src={heroImg}
@@ -13,7 +13,7 @@ const Banner = () => {
 
         {/* Left: Text + Buttons */}
         <div className="text-center lg:text-left space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-primary">
+          <h1 className="text-5xl md:text-5xl font-bold text-primary">
             Discover, Join & Host Events
           </h1>
           <p className="py-2 text-base-content text-opacity-80">
