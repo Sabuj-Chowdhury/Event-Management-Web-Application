@@ -13,7 +13,7 @@ const FeaturedEvents = () => {
   }, []);
 
   return (
-    <section className="py-12 px-4 md:px-8 bg-base-200">
+    <section className="max-w-7xl mx-auto py-12 px-4 md:px-8 bg-base-200">
       <div className="max-w-6xl mx-auto text-center space-y-6">
         <h2 className="text-3xl font-bold text-primary">Featured Events</h2>
         <p className="text-base-content text-opacity-70">

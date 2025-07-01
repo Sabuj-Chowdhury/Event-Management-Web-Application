@@ -1,4 +1,5 @@
 import Banner from "../components/Banner";
+import Categories from "../components/Categories";
 import EventSearch from "../components/EventSearch";
 import FeaturedEvents from "../components/FeaturedEvents";
 
@@ -9,7 +10,7 @@ const HomePage = () => {
       <Banner />
       <EventSearch />
       <FeaturedEvents />
-      {/* Why Choose Us (Optional) */}
+      <Categories />
     </div>
   );
 };
