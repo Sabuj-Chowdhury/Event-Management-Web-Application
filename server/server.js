@@ -3,6 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
+const eventRoutes = require("./routes/event");
 
 const { connectDB } = require("./DB/connect");
 
@@ -13,16 +14,16 @@ const port = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
+// routes
 app.use("/api/auth", authRoutes);
+app.use("/api/events", eventRoutes);
 
-// root routes
+// root route
 app.get("/", (req, res) => {
-  res
-    .status(200)
-    .json({
-      success: true,
-      message: "Welcome to Event Management Web Application API",
-    });
+  res.status(200).json({
+    success: true,
+    message: "Welcome to Event Management Web Application API",
+  });
 });
 
 // Connect to DB and Start Server
