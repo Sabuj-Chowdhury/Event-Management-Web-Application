@@ -36,7 +36,32 @@ const getAllEvents = async (req, res) => {
   res.json(data);
 };
 
+// Join Event
+const joinEvent = async (req, res) => {
+  const events = getEventsCollection();
+  const eventId = req.params.id;
+  const userId = req.user.userId;
+
+  const event = await events.findOne({ _id: new ObjectId(eventId) });
+
+  if (!event) return res.status(404).json({ error: "Event not found" });
+  if (event.joinedUsers.includes(userId)) {
+    return res.status(400).json({ error: "You already joined this event" });
+  }
+
+  await events.updateOne(
+    { _id: new ObjectId(eventId) },
+    {
+      $inc: { attendeeCount: 1 },
+      $push: { joinedUsers: userId },
+    }
+  );
+
+  res.json({ message: "Joined successfully" });
+};
+
 module.exports = {
   addEvent,
   getAllEvents,
+  joinEvent,
 };
