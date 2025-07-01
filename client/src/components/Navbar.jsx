@@ -33,7 +33,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="w-full bg-base-100 text-base-content px-4 md:px-8 shadow-md z-50">
+    <div className="w-full top-0 sticky z-20 bg-base-100 text-base-content px-4 md:px-8 shadow-md ">
       <div className="navbar max-w-7xl mx-auto flex justify-between ">
         {/* Left: Logo */}
         <div className="">
@@ -59,7 +59,7 @@ const Navbar = () => {
               >
                 <div className="w-10 rounded-full ring ring-accent ring-offset-base-100 ring-offset-2">
                   <img
-                    src={user.photo || "https://i.pravatar.cc/150?u=user"}
+                    src={user.photoURL || "https://i.pravatar.cc/150?u=user"}
                     alt="User Avatar"
                   />
                 </div>
