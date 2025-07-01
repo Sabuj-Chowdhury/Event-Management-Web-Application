@@ -7,6 +7,15 @@ Users can register, log in, create events, browse/filter/search events, join eve
 
 ---
 
+## 🌐 Live Links
+
+- 🔗 **Frontend (Live)**: [https://event-mangement-33323.web.app](https://event-mangement-33323.web.app)
+- 🔗 **Backend (Live API)**: [https://event-management-task-theta.vercel.app/api](https://event-management-task-theta.vercel.app/api)
+- 🖥️ **Local Frontend**: `http://localhost:5173`
+- 🖥️ **Local Backend**: `http://localhost:5000/api`
+
+---
+
 ## 🌟 Key Functionalities
 
 ### ✅ Authentication
@@ -48,22 +57,27 @@ Users can register, log in, create events, browse/filter/search events, join eve
 
 ---
 
-## 🚀 How to Run the Project
+## 🚀 How to Run the Project Locally
 
 1. **Clone both folders**: `/backend` and `/event-client`
 2. Set up `.env` file for backend
 3. Run backend server:
+
    ```bash
    cd backend
    npm install
    node server.js
    ```
+
+   Local API will run at `http://localhost:5000/api`
+
 4. Run frontend:
    ```bash
    cd event-client
    npm install
    npm run dev
    ```
+   Frontend will be available at `http://localhost:5173`
 
 ---
 
