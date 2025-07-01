@@ -28,6 +28,15 @@ const addEvent = async (req, res) => {
   res.status(201).json({ message: "Event added successfully", result });
 };
 
+// Get All Events
+const getAllEvents = async (req, res) => {
+  const events = getEventsCollection();
+
+  const data = await events.find().sort({ date: -1, time: -1 }).toArray();
+  res.json(data);
+};
+
 module.exports = {
   addEvent,
+  getAllEvents,
 };
