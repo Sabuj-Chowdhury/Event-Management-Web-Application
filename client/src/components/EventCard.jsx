@@ -1,6 +1,5 @@
 import { CalendarDays, Clock, MapPin } from "lucide-react";
 import { useContext } from "react";
-
 import axios from "axios";
 import toast from "react-hot-toast";
 import AuthContext from "../context/AuthContext";
@@ -21,8 +20,8 @@ const EventCard = ({ event, onRefresh }) => {
   };
 
   return (
-    <div className="bg-base-200 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-base-300">
-      <div className="p-6 space-y-3">
+    <div className="bg-base-200 rounded-xl shadow-md hover:shadow-lg transition duration-300 border border-base-300 flex flex-col h-full">
+      <div className="p-6 flex flex-col flex-grow space-y-3">
         <h3 className="text-lg font-semibold text-accent">{event.title}</h3>
         <p className="text-sm text-base-content text-opacity-80">
           Hosted by <span className="font-medium">{event.name}</span>
@@ -51,7 +50,7 @@ const EventCard = ({ event, onRefresh }) => {
           Attendees: {event.attendeeCount}
         </p>
 
-        <div className="pt-3">
+        <div className="mt-auto pt-3">
           <button
             onClick={handleJoin}
             className="btn btn-accent btn-sm text-white w-full"
