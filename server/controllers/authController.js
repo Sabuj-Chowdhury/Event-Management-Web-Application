@@ -52,4 +52,13 @@ const login = async (req, res) => {
   res.json({ token, user: { name: user.name, photoURL: user.photoURL } });
 };
 
-module.exports = { register, login };
+const getMe = async (req, res) => {
+  try {
+    // req.user is added by verifyJWT middleware
+    res.json(req.user);
+  } catch (err) {
+    res.status(500).json({ message: "Failed to get user info" });
+  }
+};
+
+module.exports = { register, login, getMe };
