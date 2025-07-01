@@ -44,7 +44,7 @@ const Register = () => {
             <input
               type="text"
               name="name"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full focus:outline-none"
               required
               onChange={handleChange}
             />
@@ -55,7 +55,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full focus:outline-none"
               required
               onChange={handleChange}
             />
@@ -68,7 +68,7 @@ const Register = () => {
             <input
               type="password"
               name="password"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full focus:outline-none"
               required
               onChange={handleChange}
             />
@@ -81,7 +81,7 @@ const Register = () => {
             <input
               type="url"
               name="photoURL"
-              className="input input-bordered w-full"
+              className="input input-bordered w-full focus:outline-none"
               onChange={handleChange}
             />
           </div>

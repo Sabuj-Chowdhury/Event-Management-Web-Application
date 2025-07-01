@@ -67,7 +67,7 @@ const UpdateEvent = () => {
           type="text"
           name="title"
           placeholder="Event Title"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
           value={formData.title}
           onChange={handleChange}
           required
@@ -75,7 +75,7 @@ const UpdateEvent = () => {
         <input
           type="date"
           name="date"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
           value={formData.date}
           onChange={handleChange}
           required
@@ -83,7 +83,7 @@ const UpdateEvent = () => {
         <input
           type="time"
           name="time"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
           value={formData.time}
           onChange={handleChange}
           required
@@ -92,7 +92,7 @@ const UpdateEvent = () => {
           type="text"
           name="location"
           placeholder="Location"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
           value={formData.location}
           onChange={handleChange}
           required
@@ -100,7 +100,7 @@ const UpdateEvent = () => {
         <textarea
           name="description"
           placeholder="Event Description"
-          className="textarea textarea-bordered w-full"
+          className="textarea textarea-bordered w-full focus:outline-none"
           rows={4}
           value={formData.description}
           onChange={handleChange}

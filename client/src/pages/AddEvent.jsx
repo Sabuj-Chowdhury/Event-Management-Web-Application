@@ -50,7 +50,7 @@ const AddEvent = () => {
           value={formData.title}
           onChange={handleChange}
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         <input
           type="text"
@@ -59,7 +59,7 @@ const AddEvent = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         <input
           type="date"
@@ -67,7 +67,7 @@ const AddEvent = () => {
           value={formData.date}
           onChange={handleChange}
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         <input
           type="time"
@@ -75,7 +75,7 @@ const AddEvent = () => {
           value={formData.time}
           onChange={handleChange}
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         <input
           type="text"
@@ -84,7 +84,7 @@ const AddEvent = () => {
           value={formData.location}
           onChange={handleChange}
           required
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         <textarea
           name="description"
@@ -92,7 +92,7 @@ const AddEvent = () => {
           value={formData.description}
           onChange={handleChange}
           required
-          className="textarea textarea-bordered w-full"
+          className="textarea textarea-bordered w-full focus:outline-none"
           rows={4}
         />
 
