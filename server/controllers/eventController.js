@@ -72,9 +72,26 @@ const getMyEvents = async (req, res) => {
   res.json(data);
 };
 
+// Update Event
+const updateEvent = async (req, res) => {
+  const events = getEventsCollection();
+  const { id } = req.params;
+  const { title, date, time, location, description } = req.body;
+
+  const result = await events.updateOne(
+    { _id: new ObjectId(id), userId: req.user.userId },
+    {
+      $set: { title, date, time, location, description },
+    }
+  );
+
+  res.json({ message: "Event updated successfully", result });
+};
+
 module.exports = {
   addEvent,
   getAllEvents,
   joinEvent,
   getMyEvents,
+  updateEvent,
 };
