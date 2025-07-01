@@ -23,7 +23,7 @@ const HostEvent = () => {
               engage attendees.
             </p>
             <Link
-              to="/create-event"
+              to="/add-event"
               className="btn btn-accent btn-wide text-white"
             >
               Start Hosting

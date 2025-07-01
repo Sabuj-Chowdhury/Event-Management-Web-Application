@@ -18,26 +18,17 @@ const Navbar = () => {
           Events
         </NavLink>
       </li>
-      {user && (
-        <>
-          <li>
-            <NavLink
-              to="/add-event"
-              className="font-semibold hover:text-accent"
-            >
-              Add Event
-            </NavLink>
-          </li>
-          <li>
-            <NavLink
-              to="/my-events"
-              className="font-semibold hover:text-accent"
-            >
-              My Events
-            </NavLink>
-          </li>
-        </>
-      )}
+
+      <li>
+        <NavLink to="/add-event" className="font-semibold hover:text-accent">
+          Add Event
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/my-events" className="font-semibold hover:text-accent">
+          My Events
+        </NavLink>
+      </li>
     </>
   );
 

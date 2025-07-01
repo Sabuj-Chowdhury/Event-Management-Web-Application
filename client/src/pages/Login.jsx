@@ -1,10 +1,13 @@
 import { useContext, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import SectionTitle from "../components/SectionTitle";
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 
 const Login = () => {
   const { login } = useContext(AuthContext);
+
+  const location = useLocation();
+  const from = location?.state || "/";
   const navigate = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -14,7 +17,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const success = await login(formData.email, formData.password);
-    if (success) navigate("/");
+    if (success) navigate(from, { replace: true });
   };
 
   return (

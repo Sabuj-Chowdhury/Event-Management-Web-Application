@@ -8,6 +8,7 @@ import Register from "../pages/Register";
 import AddEvent from "../pages/AddEvent";
 import MyEvents from "../pages/MyEvents";
 import UpdateEvent from "../pages/UpdateEvent";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/events",
-        element: <Events />,
+        element: (
+          <PrivateRoute>
+            <Events />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -37,15 +42,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-event",
-        element: <AddEvent />,
+        element: (
+          <PrivateRoute>
+            <AddEvent />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-events",
-        element: <MyEvents />,
+        element: (
+          <PrivateRoute>
+            <MyEvents />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-event/:id",
-        element: <UpdateEvent />,
+        element: (
+          <PrivateRoute>
+            <UpdateEvent />
+          </PrivateRoute>
+        ),
       },
     ],
   },
