@@ -10,7 +10,7 @@ Users can register, log in, create events, browse/filter/search events, join eve
 ## 🌐 Live Links
 
 - 🔗 **Frontend (Live)**: [https://event-mangement-33323.web.app](https://event-mangement-33323.web.app)
-- 🔗 **Backend (Live API)**: [https://event-management-task-theta.vercel.app](https://event-management-task-theta.vercel.app/api)
+- 🔗 **Backend (Live API)**: [https://event-management-task-theta.vercel.app](https://event-management-task-theta.vercel.app)
 - 🖥️ **Local Frontend**: `http://localhost:5173`
 - 🖥️ **Local Backend**: `http://localhost:5000/api`
 
