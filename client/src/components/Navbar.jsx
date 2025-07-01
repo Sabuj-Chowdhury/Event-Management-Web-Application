@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router";
-import { FaUserCircle } from "react-icons/fa";
+
 import AuthContext from "../context/AuthContext";
 
 const Navbar = () => {
