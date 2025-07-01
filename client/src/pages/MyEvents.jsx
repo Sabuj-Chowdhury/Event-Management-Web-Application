@@ -7,13 +7,17 @@ import MyEventCard from "../components/MyEventCard";
 
 const MyEvents = () => {
   const [myEvents, setMyEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   const fetchMyEvents = async () => {
+    setLoading(true);
     try {
       const res = await axios.get("/events/my-events");
       setMyEvents(res.data);
     } catch (err) {
       toast.error("Failed to fetch your events");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -50,7 +54,11 @@ const MyEvents = () => {
         subtitle="Manage the events you've created"
       />
 
-      {myEvents.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center items-center h-60">
+          <span className="loading loading-ring loading-xl"></span>
+        </div>
+      ) : myEvents.length === 0 ? (
         <p className="text-center text-base-content text-opacity-70">
           You haven't created any events yet.
         </p>

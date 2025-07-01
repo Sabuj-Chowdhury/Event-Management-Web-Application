@@ -7,8 +7,10 @@ import EventCard from "../components/EventCard";
 const Events = () => {
   const [events, setEvents] = useState([]);
   const [search, setSearch] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const fetchEvents = async () => {
+    setLoading(true);
     try {
       const res = await axios.get("/events", {
         params: { search },
@@ -16,6 +18,8 @@ const Events = () => {
       setEvents(res.data);
     } catch (err) {
       toast.error("Failed to fetch events");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,7 +34,7 @@ const Events = () => {
         subtitle="Find and join events that match your interests and schedule."
       />
 
-      {/* 🔍 Search Bar */}
+      {/*  Search Bar */}
       <div className="w-full max-w-lg mx-auto mb-8">
         <input
           type="text"
@@ -41,8 +45,11 @@ const Events = () => {
         />
       </div>
 
-      {/* 📅 Events List */}
-      {events.length === 0 ? (
+      {loading ? (
+        <div className="flex justify-center items-center h-60">
+          <span className="loading loading-ring loading-xl"></span>
+        </div>
+      ) : events.length === 0 ? (
         <p className="text-center text-base-content text-opacity-70">
           No events found.
         </p>

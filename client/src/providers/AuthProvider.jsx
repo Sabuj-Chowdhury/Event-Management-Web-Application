@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import AuthContext from "../context/AuthContext";
 import toast from "react-hot-toast";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+// axios.defaults.baseURL = "http://localhost:5000/api";
+axios.defaults.baseURL = "https://event-management-task-theta.vercel.app/api";
 
 // token in axios headers if it exists
 const token = localStorage.getItem("token");
@@ -70,7 +71,13 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider value={contextValue}>
-      {!loading && children}
+      {loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <span className="loading loading-ring loading-xl"></span>
+        </div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 };
