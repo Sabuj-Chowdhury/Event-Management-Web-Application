@@ -2,6 +2,7 @@ import Banner from "../components/Banner";
 import Categories from "../components/Categories";
 import EventSearch from "../components/EventSearch";
 import FeaturedEvents from "../components/FeaturedEvents";
+import HostEvent from "../components/HostEvent";
 
 const HomePage = () => {
   return (
@@ -11,6 +12,7 @@ const HomePage = () => {
       <EventSearch />
       <FeaturedEvents />
       <Categories />
+      <HostEvent />
     </div>
   );
 };
