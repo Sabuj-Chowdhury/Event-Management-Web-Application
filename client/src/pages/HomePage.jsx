@@ -1,11 +1,12 @@
 import Banner from "../components/Banner";
+import EventSearch from "../components/EventSearch";
 
 const HomePage = () => {
   return (
     <div>
       {/* hero/banner */}
       <Banner />
-      {/* Featured Events (Event Cards) */}
+      <EventSearch />
       {/* How It Works (Steps/Icons) */}
       {/* Why Choose Us (Optional) */}
     </div>
