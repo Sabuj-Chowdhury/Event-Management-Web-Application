@@ -3,7 +3,7 @@ import hostEvent from "../assets/eventHost.jpg";
 
 const HostEvent = () => {
   return (
-    <section className="py-16 px-4 md:px-8 bg-base-200 max-w-7xl mx-auto">
+    <section className="bg-base-100 py-16 px-4 md:px-8">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         {/* Illustration or Placeholder Image */}
         <div className="flex-1">

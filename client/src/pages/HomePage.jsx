@@ -3,6 +3,7 @@ import Categories from "../components/Categories";
 import EventSearch from "../components/EventSearch";
 import FeaturedEvents from "../components/FeaturedEvents";
 import HostEvent from "../components/HostEvent";
+import TestimonialsAndStats from "../components/TestimonialsAndStats";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,7 @@ const HomePage = () => {
       <FeaturedEvents />
       <Categories />
       <HostEvent />
+      <TestimonialsAndStats />
     </div>
   );
 };
